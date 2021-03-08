@@ -1,9 +1,6 @@
 package com.tts.mapsapp.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.util.List;
 
 @Data
@@ -11,10 +8,11 @@ public class GeocodingResponse {
 
     private List<Geocoding> results;
 
-    public GeocodingResponse() {
+    public List<Geocoding> getResults() {
+        return results;
     }
 
-    public GeocodingResponse(List<Geocoding> results) {
+    public void setResults(List<Geocoding> results) {
         this.results = results;
     }
 }

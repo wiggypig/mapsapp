@@ -2,24 +2,25 @@ var map;
 //let coords = {lat: 39.9612, lng: -82.9988};
 
 function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: coords,
+        zoom: 10,
+//        scrollwheel: true
+    });
 
     let image = {
     url:'/2766276.svg',
     scaledSize: new google.maps.Size(50, 50)
     };
 
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: coords,
-        zoom: 10,
-        scrollwheel: true
-    });
     let marker = new google.maps.Marker({
         position: coords,
         map: map,
-        icon: image
+        icon: image,
+		animation: google.maps.Animation.BOUNCE
     });
 
-        var contentString = '<h2>' + city + ', ' + state + '</h2>';
+        let contentString = '<h2>' + city + ', ' + state + ', where dreams can come true!</h2>';
 
         let infowindow = new google.maps.InfoWindow({
             content: contentString

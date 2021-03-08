@@ -1,18 +1,17 @@
 package com.tts.mapsapp.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 public class Geometry {
 
     private Location location;
 
-    public Geometry() {
+    public Location getLocation() {
+        return location;
     }
 
-    public Geometry(Location location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 }
